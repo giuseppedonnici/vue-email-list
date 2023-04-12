@@ -12,7 +12,6 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            email: null,
             emailArray: []
         }
     },
@@ -20,9 +19,9 @@ createApp({
     mounted() {
         for (let i = 0; i < 10; i++) {
             axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((resp) => {
-                this.email = resp.data.response;
-                this.emailArray.push(this.email);
+                const curEmail = resp.data.response;
+                this.emailArray.push(curEmail);
             });
         }
-    },
+    }
 }).mount('#app')

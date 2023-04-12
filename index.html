@@ -13,9 +13,11 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="element in emailArray">{{ element }}</li>
+        <ul v-if="emailArray.length === 10">
+            <li v-for="email in emailArray">{{ email }}</li>
         </ul>
+
+        <p v-else>Loading...</p>
 
     </div>
     
